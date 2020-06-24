@@ -9,6 +9,7 @@
 import UIKit
 import BRYXBanner
 import FirebaseAuth
+import FirebaseFirestore
 
 class EmailSignUpViewController: UIViewController {
     
@@ -31,7 +32,7 @@ class EmailSignUpViewController: UIViewController {
         passwordField.isSecureTextEntry = true
         confirmPasswordField.isSecureTextEntry = true
     }
-
+    
     
     
     @IBAction func onCompleteSignUpFlow(_ sender: Any) {
@@ -117,6 +118,22 @@ class EmailSignUpViewController: UIViewController {
                 } else {
                     print("successful user creation!")
                     // TODO: add user to firebase cloud firestore
+                    let db = Firestore.firestore()
+                    var ref: DocumentReference? = nil
+                    print("pre write")
+                    ref = db.collection("users").addDocument(data: [
+                        "firstName": firstName,
+                        "lastName": lastName,
+                        "email":emailAddress
+                    ]){ err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("Document added with ID: \(ref!.documentID)")
+                        }
+                        
+                    }
+                    print("post write")
                     authBanner = Banner(title: "Success!", subtitle: "Success! Let's verify your email now.", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
                     authBanner.show(nil, duration: 1.5)
                 }

@@ -94,7 +94,7 @@ class EmailSignUpViewController: UIViewController {
         }
         
         if(validFirst && validLast && validEmail && validPass.0 && matchingPass){
-            
+                        
             Auth.auth().createUser(withEmail: emailAddress, password: password){ (authResult, error) in
                 var authBanner: Banner
                 if error != nil {
@@ -117,6 +117,7 @@ class EmailSignUpViewController: UIViewController {
                     authBanner.show(nil, duration: 1.5)
                 } else {
                     print("successful user creation!")
+                    sendVerificationEmail() //TODO : write this function lmao
                     // TODO: add user to firebase cloud firestore
                     let db = Firestore.firestore()
                     var ref: DocumentReference? = nil

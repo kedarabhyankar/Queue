@@ -22,11 +22,16 @@ class EmailSignUpViewController: UIViewController {
     final let ui_blue: UIColor = UIColor(red: 0.0/255.0, green: 0/255.0, blue: 255.0/255.0, alpha: 1.000)
     final let ui_green: UIColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
     final let ui_yellow: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        passwordField.isSecureTextEntry = true
+        confirmPasswordField.isSecureTextEntry = true
     }
+
     
     
     @IBAction func onCompleteSignUpFlow(_ sender: Any) {
@@ -88,19 +93,48 @@ class EmailSignUpViewController: UIViewController {
         }
         
         if(validFirst && validLast && validEmail && validPass.0 && matchingPass){
+            
             Auth.auth().createUser(withEmail: emailAddress, password: password){ (authResult, error) in
-                if let e = error {
-                    print(e.localizedDescription)
-                } else {
-                    print("Successful Signup!")
+                var authBanner: Banner
+                if error != nil {
+                    let authError = AuthErrorCode(rawValue: error!._code)
                     
+                    switch authError {
+                    case .networkError :
+                        authBanner = self.authBannerBuilder(bannerTitle: "Network Error!", text: "There was a network error. Try again!")
+                    case .emailAlreadyInUse :
+                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "The email address is already in use. Perhaps you should reset your password?")
+                    case .missingEmail:
+                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text:"Ensure you fill in an email address!!")
+                    case .credentialAlreadyInUse:
+                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "That email address seems like its already in use. Did you create an email with Sign In With Apple?")
+                    case .tooManyRequests:
+                        authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "You seemed to have tried to create an account too frequently. Try again in a bit.")
+                    default:
+                        authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "There was an unspecified error. Try again in a bit.")
+                    }
+                    authBanner.show(nil, duration: 1.5)
+                } else {
+                    print("successful user creation!")
+                    // TODO: add user to firebase cloud firestore
+                    authBanner = Banner(title: "Success!", subtitle: "Success! Let's verify your email now.", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
+                    authBanner.show(nil, duration: 1.5)
                 }
             }
         }
     }
     
     func validateName(name: String) -> Bool {
-        return (!name.isEmpty && (name.range(of: "[^a-zA-Z]") != nil))
+        if(name.count == 0){
+            return false
+        }
+        var allLetters: Bool = true
+        for char in name {
+            if(!char.isLetter){
+                allLetters = false
+            }
+        }
+        return allLetters
     }
     
     func validateEmail(email: String) -> Bool {
@@ -123,7 +157,7 @@ class EmailSignUpViewController: UIViewController {
                 upper += 1
             } else if(char.isLowercase){
                 lower += 1
-            } else if(char.isSymbol){
+            } else if(char.isPunctuation || char.isSymbol || char.isCurrencySymbol){
                 special += 1
             } else if(char.isNumber){
                 num += 1
@@ -151,6 +185,10 @@ class EmailSignUpViewController: UIViewController {
     
     func passFailBannerBuilder(text: String) -> Banner {
         return Banner(title: "Invalid Password!", subtitle: text, image: nil, backgroundColor: ui_yellow, didTapBlock: nil)
+    }
+    
+    func authBannerBuilder(bannerTitle: String, text: String) -> Banner {
+        return Banner(title: bannerTitle, subtitle: text, image: nil, backgroundColor: ui_red, didTapBlock: nil)
     }
     
     /*

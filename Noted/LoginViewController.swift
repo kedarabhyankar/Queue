@@ -61,12 +61,14 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     @IBAction func onSignInWithEmail(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "emailSignInScreen") as EmailSignInViewController
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onSignUpWithEmail(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "emailSignUpScreen") as EmailSignUpViewController
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
@@ -95,7 +97,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
             siwaButton!.heightAnchor.constraint(equalToConstant:
                 signInWithEmailButton.frame.size.height),
         ])
-        siwaButton?.cornerRadius = 10
+        siwaButton?.cornerRadius = 20
     }
     
     @available(iOS 13, *)

@@ -19,10 +19,10 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     
-    final let ui_red: UIColor = UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.000)
-    final let ui_blue: UIColor = UIColor(red: 0.0/255.0, green: 0/255.0, blue: 255.0/255.0, alpha: 1.000)
-    final let ui_green: UIColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
-    final let ui_yellow: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
+    public final let ui_red: UIColor = UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.000)
+    public final let ui_blue: UIColor = UIColor(red: 0.0/255.0, green: 0/255.0, blue: 255.0/255.0, alpha: 1.000)
+    public final let ui_green: UIColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
+    public final let ui_yellow: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,12 +117,14 @@ class EmailSignUpViewController: UIViewController {
                     authBanner.show(nil, duration: 1.5)
                 } else {
                     print("successful user creation!")
-                    sendVerificationEmail() //TODO : write this function lmao
-                    // TODO: add user to firebase cloud firestore
+                    let verified = self.sendVerificationEmail(user: Auth.auth().currentUser!) //TODO : write this function lmao
+                    if(!verified){
+                        authBanner = self.authBannerBuilder(bannerTitle: "Error!", text: "An error occurred while signing up. Try again.")
+                    }
                     let db = Firestore.firestore()
                     var ref: DocumentReference? = nil
-                    print("pre write")
                     ref = db.collection("users").addDocument(data: [
+                        "signInFlow": "Email and Password",
                         "firstName": firstName,
                         "lastName": lastName,
                         "email":emailAddress
@@ -134,7 +136,6 @@ class EmailSignUpViewController: UIViewController {
                         }
                         
                     }
-                    print("post write")
                     authBanner = Banner(title: "Success!", subtitle: "Success! Let's verify your email now.", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
                     authBanner.show(nil, duration: 1.5)
                 }
@@ -207,6 +208,10 @@ class EmailSignUpViewController: UIViewController {
     
     func authBannerBuilder(bannerTitle: String, text: String) -> Banner {
         return Banner(title: bannerTitle, subtitle: text, image: nil, backgroundColor: ui_red, didTapBlock: nil)
+    }
+    
+    func sendVerificationEmail(user: User) -> Bool {
+        return false
     }
     
     /*

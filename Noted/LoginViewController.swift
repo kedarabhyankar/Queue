@@ -11,8 +11,13 @@ import AuthenticationServices
 import CryptoKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
     
     
     @IBOutlet weak var signInWithEmailButton: UIButton!
@@ -55,7 +60,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         NSLayoutConstraint.activate([
             signUpWithEmailButton.topAnchor.constraint(equalTo: siwaButton!.bottomAnchor, constant: 44)
         ])
-        // Do any additional setup after loading the view.
+        siwaButton!.addTarget(self, action: #selector(onSignInWithApple), for: .touchUpInside)
     }
     
     @IBAction func onSignInWithEmail(_ sender: Any) {
@@ -95,7 +100,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
             siwaButton!.topAnchor.constraint(equalTo:signInWithEmailButton.bottomAnchor, constant: 22),
             siwaButton!.widthAnchor.constraint(equalToConstant: signInWithEmailButton.frame.size.width),
             siwaButton!.heightAnchor.constraint(equalToConstant:
-                signInWithEmailButton.frame.size.height),
+                                                    signInWithEmailButton.frame.size.height),
         ])
         siwaButton?.cornerRadius = 20
     }
@@ -174,33 +179,43 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                     print(error.localizedDescription)
                     return
                 }
-                
-                // Make a request to set user's display name on Firebase
-                let changeRequest = authResult?.user.createProfileChangeRequest()
-                changeRequest?.displayName = appleIDCredential.fullName?.givenName
-                changeRequest?.commitChanges(completion: { (error) in
-                    
-                    if let error = error {
-                        print(error.localizedDescription)
+                let db = Firestore.firestore()
+                var ref: DocumentReference? = nil
+                ref = db.collection("users").addDocument(data: [
+                    "signInFlow": "Sign In with Apple",
+                    "firstName": appleIDCredential.fullName?.givenName ?? "first name error!",
+                    "lastName": appleIDCredential.fullName?.familyName ?? "last name error!",
+                    "email":appleIDCredential.email ?? "email error"
+                ]){ err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
                     } else {
-                        print("Updated display name: \(Auth.auth().currentUser!.displayName!)")
+                        print("Document added with ID: \(ref!.documentID)")
                     }
-                })
+                    
+                    // Make a request to set user's display name on Firebase
+                    let changeRequest = authResult?.user.createProfileChangeRequest()
+                    changeRequest?.displayName = appleIDCredential.fullName?.givenName
+                    changeRequest?.commitChanges(completion: { (error) in
+                        
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            print("Updated display name: \(Auth.auth().currentUser!.displayName!)")
+                        }
+                    })
+                }
             }
         }
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
     }
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

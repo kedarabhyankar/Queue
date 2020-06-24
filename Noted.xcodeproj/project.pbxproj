@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		E43460F524A0183800FE3459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43460F324A0183800FE3459 /* LaunchScreen.storyboard */; };
 		E434610024A0183800FE3459 /* NotedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460FF24A0183800FE3459 /* NotedTests.swift */; };
 		E434610B24A0183800FE3459 /* NotedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434610A24A0183800FE3459 /* NotedUITests.swift */; };
+		E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */; };
+		E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		E434610624A0183800FE3459 /* NotedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E434610A24A0183800FE3459 /* NotedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedUITests.swift; sourceTree = "<group>"; };
 		E434610C24A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
+		E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E45FD3DB24A01EC300826AEF /* Noted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noted.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -106,7 +110,6 @@
 				109FB7328CA017A62D6D4048 /* Pods-NotedTests.debug.xcconfig */,
 				956C91051319075A33CFAB6B /* Pods-NotedTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +158,8 @@
 				E43460F324A0183800FE3459 /* LaunchScreen.storyboard */,
 				E43460F624A0183800FE3459 /* Info.plist */,
 				E45FD3D924A01D7D00826AEF /* LoginViewController.swift */,
+				E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */,
+				E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */,
 			);
 			path = Noted;
 			sourceTree = "<group>";
@@ -245,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Kedar Abhyankar";
 				TargetAttributes = {
 					E43460E424A0183700FE3459 = {
@@ -418,7 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */,
+				E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */,
 				E43460ED24A0183700FE3459 /* ViewController.swift in Sources */,
+				E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */,
 				E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */,
 				E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */,
 			);
@@ -501,6 +508,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -561,6 +569,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -633,7 +642,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 109FB7328CA017A62D6D4048 /* Pods-NotedTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
@@ -656,7 +664,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 956C91051319075A33CFAB6B /* Pods-NotedTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
@@ -679,7 +686,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4BF99ED729F919EA221CECD /* Pods-Noted-NotedUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
 				INFOPLIST_FILE = NotedUITests/Info.plist;
@@ -700,7 +706,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6656DDE11DCE3858EC772F43 /* Pods-Noted-NotedUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
 				INFOPLIST_FILE = NotedUITests/Info.plist;

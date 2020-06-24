@@ -14,14 +14,15 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
-    }
     
     @IBOutlet weak var signInWithEmailButton: UIButton!
+    @IBOutlet weak var signUpWithEmailButton: UIButton!
     var siwaButton : ASAuthorizationAppleIDButton? = nil
     fileprivate var currentNonce: String?
     
+    /**
+     This function is used to watch the traitCollectionDidChange environment, which will change the Sign In With Apple Button (SIWA) from dark to light when appropriate.
+     */
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         let hasUIStyleChanged = traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
@@ -51,12 +52,24 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         siwaButton?.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview((siwaButton)!)
         constrainSiwaButton()
+        NSLayoutConstraint.activate([
+            signUpWithEmailButton.topAnchor.constraint(equalTo: siwaButton!.bottomAnchor, constant: 44)
+        ])
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onSignInWithEmail(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "emailSignInScreen") as EmailSignInViewController
+        present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func onSignUpWithEmail(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "emailSignUpScreen") as EmailSignUpViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
     
     @available(iOS 13, *)
     @objc
@@ -173,6 +186,10 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                 })
             }
         }
+    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
     }
     /*
      // MARK: - Navigation

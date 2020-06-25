@@ -23,6 +23,7 @@
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
 		E46A9A6824A3FC8D00622AB3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46A9A6724A3FC8D00622AB3 /* Home.storyboard */; };
+		E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E45FD3DB24A01EC300826AEF /* Noted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noted.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E46A9A6724A3FC8D00622AB3 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		FE7E34952923972D08DBC323 /* Pods_Noted_NotedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noted_NotedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */,
 				E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */,
 				E46A9A6724A3FC8D00622AB3 /* Home.storyboard */,
+				E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */,
 			);
 			path = Noted;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */,
 				E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */,
 				E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */,
+				E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

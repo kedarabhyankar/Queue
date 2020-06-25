@@ -94,29 +94,29 @@ class EmailSignUpViewController: UIViewController {
         }
         
         if(validFirst && validLast && validEmail && validPass.0 && matchingPass){
-                        
+            
             Auth.auth().createUser(withEmail: emailAddress, password: password){ (authResult, error) in
                 var authBanner: Banner
                 if error != nil {
                     let authError = AuthErrorCode(rawValue: error!._code)
                     
                     switch authError {
-                    case .networkError :
-                        authBanner = self.authBannerBuilder(bannerTitle: "Network Error!", text: "There was a network error. Try again!")
-                    case .emailAlreadyInUse :
-                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "The email address is already in use. Perhaps you should reset your password?")
-                    case .missingEmail:
-                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text:"Ensure you fill in an email address!!")
-                    case .credentialAlreadyInUse:
-                        authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "That email address seems like its already in use. Did you create an email with Sign In With Apple?")
-                    case .tooManyRequests:
-                        authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "You seemed to have tried to create an account too frequently. Try again in a bit.")
-                    default:
-                        authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "There was an unspecified error. Try again in a bit.")
+                        case .networkError :
+                            authBanner = self.authBannerBuilder(bannerTitle: "Network Error!", text: "There was a network error. Try again!")
+                        case .emailAlreadyInUse :
+                            authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "The email address is already in use. Perhaps you should reset your password?")
+                        case .missingEmail:
+                            authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text:"Ensure you fill in an email address!!")
+                        case .credentialAlreadyInUse:
+                            authBanner = self.authBannerBuilder(bannerTitle: "Email error!", text: "That email address seems like its already in use. Did you create an email with Sign In With Apple?")
+                        case .tooManyRequests:
+                            authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "You seemed to have tried to create an account too frequently. Try again in a bit.")
+                        default:
+                            authBanner = self.authBannerBuilder(bannerTitle: "Sign Up Error!", text: "There was an unspecified error. Try again in a bit.")
                     }
                     authBanner.show(nil, duration: 1.5)
                 } else {
-//                    print("successful user creation!")
+                    //                    print("successful user creation!")
                     let db = Firestore.firestore()
                     var ref: DocumentReference? = nil
                     ref = db.collection("users").addDocument(data: [

@@ -21,7 +21,6 @@ class EmailSignInViewController: UIViewController {
         passwordField.isSecureTextEntry = true
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
-        
     }
     
     @IBAction func onSignIn(_ sender: Any) {

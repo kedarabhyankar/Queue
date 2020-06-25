@@ -116,11 +116,7 @@ class EmailSignUpViewController: UIViewController {
                     }
                     authBanner.show(nil, duration: 1.5)
                 } else {
-                    print("successful user creation!")
-                    let verified = self.sendVerificationEmail(user: Auth.auth().currentUser!) //TODO : write this function lmao
-                    if(!verified){
-                        authBanner = self.authBannerBuilder(bannerTitle: "Error!", text: "An error occurred while signing up. Try again.")
-                    }
+//                    print("successful user creation!")
                     let db = Firestore.firestore()
                     var ref: DocumentReference? = nil
                     ref = db.collection("users").addDocument(data: [
@@ -208,10 +204,6 @@ class EmailSignUpViewController: UIViewController {
     
     func authBannerBuilder(bannerTitle: String, text: String) -> Banner {
         return Banner(title: bannerTitle, subtitle: text, image: nil, backgroundColor: ui_red, didTapBlock: nil)
-    }
-    
-    func sendVerificationEmail(user: User) -> Bool {
-        return false
     }
     
     /*

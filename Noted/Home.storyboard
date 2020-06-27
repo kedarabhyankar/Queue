@@ -60,18 +60,82 @@
         <!--Profile-->
         <scene sceneID="y9Q-6e-UmE">
             <objects>
-                <viewController id="Lnd-2P-aOf" sceneMemberID="viewController">
+                <viewController id="Lnd-2P-aOf" customClass="ProfileViewController" customModule="Noted" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dak-2U-W4r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4J0-ms-cWn" customClass="ProfileTableView" customModule="Noted" customModuleProvider="target">
+                                <rect key="frame" x="39" y="92" width="336" height="649"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="71" id="Vph-2D-aSZ" customClass="ProfileTableViewCell" customModule="Noted" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="336" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vph-2D-aSZ" id="IEE-4p-Qgz">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-Wa-j7L">
+                                                    <rect key="frame" x="20" y="11" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="E4V-JU-xzc"/>
+                                                        <constraint firstAttribute="width" constant="49" id="zNB-vB-Vwy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuZ-MP-jco">
+                                                    <rect key="frame" x="77" y="27" width="239" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VuZ-MP-jco" firstAttribute="leading" secondItem="Hpo-Wa-j7L" secondAttribute="trailing" constant="8" symbolic="YES" id="0eG-Vq-faP"/>
+                                                <constraint firstItem="VuZ-MP-jco" firstAttribute="top" secondItem="IEE-4p-Qgz" secondAttribute="topMargin" constant="16" id="GyG-rX-BrT"/>
+                                                <constraint firstItem="VuZ-MP-jco" firstAttribute="leading" secondItem="Hpo-Wa-j7L" secondAttribute="trailing" constant="8" symbolic="YES" id="HGM-8b-v9x"/>
+                                                <constraint firstItem="Hpo-Wa-j7L" firstAttribute="bottom" secondItem="IEE-4p-Qgz" secondAttribute="bottomMargin" id="MDq-EJ-MUb"/>
+                                                <constraint firstItem="VuZ-MP-jco" firstAttribute="trailing" secondItem="IEE-4p-Qgz" secondAttribute="trailingMargin" id="Z8e-dU-9YY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VuZ-MP-jco" secondAttribute="bottom" constant="16" id="flb-im-q0h"/>
+                                                <constraint firstItem="Hpo-Wa-j7L" firstAttribute="top" secondItem="IEE-4p-Qgz" secondAttribute="topMargin" id="lbn-Km-dnb"/>
+                                                <constraint firstItem="Hpo-Wa-j7L" firstAttribute="leading" secondItem="IEE-4p-Qgz" secondAttribute="leadingMargin" id="rFB-d3-YpJ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellText" destination="VuZ-MP-jco" id="RoI-dL-hwx"/>
+                                            <outlet property="imageCell" destination="Hpo-Wa-j7L" id="Fff-kO-xKg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="t1U-AR-VYt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4J0-ms-cWn" firstAttribute="top" secondItem="t1U-AR-VYt" secondAttribute="top" constant="48" id="4zJ-8y-lkO"/>
+                            <constraint firstItem="t1U-AR-VYt" firstAttribute="trailing" secondItem="4J0-ms-cWn" secondAttribute="trailing" constant="39" id="8Ct-tV-rLJ"/>
+                            <constraint firstItem="4J0-ms-cWn" firstAttribute="leading" secondItem="t1U-AR-VYt" secondAttribute="leading" constant="39" id="PI7-Is-3Rx"/>
+                            <constraint firstItem="t1U-AR-VYt" firstAttribute="bottom" secondItem="4J0-ms-cWn" secondAttribute="bottom" constant="72" id="v17-Ud-XxA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" selectedImage="person.circle" id="qPh-Z6-HD8"/>
+                    <connections>
+                        <outlet property="cellText" destination="VuZ-MP-jco" id="whA-tR-F5G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9a-E1-S5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="1598"/>
+            <point key="canvasLocation" x="1460.8695652173915" y="1597.7678571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xgj-h9-LOQ">

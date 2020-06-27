@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     
     
     @IBOutlet weak var signInWithEmailButton: UIButton!
+    @IBOutlet weak var resetPass: UIButton!
     @IBOutlet weak var signUpWithEmailButton: UIButton!
     var siwaButton : ASAuthorizationAppleIDButton? = nil
     fileprivate var currentNonce: String?
@@ -33,13 +34,13 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         let hasUIStyleChanged = traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)
         if(hasUIStyleChanged){
             switch traitCollection.userInterfaceStyle {
-            case .dark:
-                siwaButton = ASAuthorizationAppleIDButton(type: .default, style: .white)
-                siwaButton?.translatesAutoresizingMaskIntoConstraints = false
-            default:
-                siwaButton = ASAuthorizationAppleIDButton(type: .default, style: .black)
-                siwaButton?.translatesAutoresizingMaskIntoConstraints = false
-                
+                case .dark:
+                    siwaButton = ASAuthorizationAppleIDButton(type: .default, style: .white)
+                    siwaButton?.translatesAutoresizingMaskIntoConstraints = false
+                default:
+                    siwaButton = ASAuthorizationAppleIDButton(type: .default, style: .black)
+                    siwaButton?.translatesAutoresizingMaskIntoConstraints = false
+                    
             }
         }
         self.view.addSubview((siwaButton)!);
@@ -59,6 +60,9 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         constrainSiwaButton()
         NSLayoutConstraint.activate([
             signUpWithEmailButton.topAnchor.constraint(equalTo: siwaButton!.bottomAnchor, constant: 44)
+        ])
+        NSLayoutConstraint.activate([
+            resetPass.topAnchor.constraint(equalTo: signUpWithEmailButton.bottomAnchor, constant:44)
         ])
         siwaButton!.addTarget(self, action: #selector(onSignInWithApple), for: .touchUpInside)
     }
@@ -91,6 +95,13 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+    }
+    
+    @IBAction func onResetPassword(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "resetPassword") as ResetPasswordViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     func constrainSiwaButton(){

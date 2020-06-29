@@ -96,7 +96,7 @@ class EmailSignUpViewController: UIViewController {
         if(validFirst && validLast && validEmail && validPass.0 && matchingPass){
             
             Auth.auth().createUser(withEmail: emailAddress, password: password){ (authResult, error) in
-                var authBanner: Banner
+                var authBanner: Banner = Banner()
                 if error != nil {
                     let authError = AuthErrorCode(rawValue: error!._code)
                     
@@ -129,11 +129,14 @@ class EmailSignUpViewController: UIViewController {
                             print("Error adding document: \(err)")
                         } else {
                             print("Document added with ID: \(ref!.documentID)")
+                            authBanner = Banner(title: "Success!", subtitle: "Success! Logging you in now...", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
+                            authBanner.show(nil, duration: 1.5)
+                            LoginViewController.init().performHomeScreenFlow()
                         }
                         
                     }
-                    authBanner = Banner(title: "Success!", subtitle: "Success! Let's verify your email now.", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
-                    authBanner.show(nil, duration: 1.5)
+
+                    
                 }
             }
         }

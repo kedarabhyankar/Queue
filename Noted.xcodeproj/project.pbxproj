@@ -10,6 +10,7 @@
 		1BB84A0524A6D21D81C1B0B0 /* Pods_NotedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD35669BE28D82C17E7B09F0 /* Pods_NotedTests.framework */; };
 		A654A7FEC2D40FE985DBE21E /* Pods_Noted_NotedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7E34952923972D08DBC323 /* Pods_Noted_NotedUITests.framework */; };
 		AE78A66D770F8CE62D260A4C /* Pods_Noted.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13860BE69B25584B755EBB4 /* Pods_Noted.framework */; };
+		E41B4C1624A7E32500A384C1 /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */; };
 		E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460E824A0183700FE3459 /* AppDelegate.swift */; };
 		E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460EA24A0183700FE3459 /* SceneDelegate.swift */; };
 		E43460ED24A0183700FE3459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460EC24A0183700FE3459 /* ViewController.swift */; };
@@ -22,7 +23,6 @@
 		E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
-		E46A9A6824A3FC8D00622AB3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E46A9A6724A3FC8D00622AB3 /* Home.storyboard */; };
 		E4B3B98524A56CBB00D5001D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */; };
 		E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */; };
 		E4D297E024A57A73007E6F45 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */; };
@@ -55,6 +55,7 @@
 		BCB51FF290984DE4B21A353D /* Pods-Noted.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noted.debug.xcconfig"; path = "Target Support Files/Pods-Noted/Pods-Noted.debug.xcconfig"; sourceTree = "<group>"; };
 		BD35669BE28D82C17E7B09F0 /* Pods_NotedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13860BE69B25584B755EBB4 /* Pods_Noted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 		E43460E524A0183700FE3459 /* Noted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43460E824A0183700FE3459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E43460EA24A0183700FE3459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E45FD3DB24A01EC300826AEF /* Noted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noted.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E46A9A6724A3FC8D00622AB3 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
@@ -170,11 +170,11 @@
 				E45FD3D924A01D7D00826AEF /* LoginViewController.swift */,
 				E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */,
 				E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */,
-				E46A9A6724A3FC8D00622AB3 /* Home.storyboard */,
 				E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */,
 				E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */,
 				E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */,
 				E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */,
+				E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */,
 			);
 			path = Noted;
 			sourceTree = "<group>";
@@ -307,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E43460F524A0183800FE3459 /* LaunchScreen.storyboard in Resources */,
-				E46A9A6824A3FC8D00622AB3 /* Home.storyboard in Resources */,
 				E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */,
 				E43460F224A0183800FE3459 /* Assets.xcassets in Resources */,
 				E43460F024A0183700FE3459 /* Main.storyboard in Resources */,
@@ -442,6 +441,7 @@
 				E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */,
 				E43460ED24A0183700FE3459 /* ViewController.swift in Sources */,
 				E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */,
+				E41B4C1624A7E32500A384C1 /* HomeFeedViewController.swift in Sources */,
 				E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */,
 				E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */,
 				E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */,

@@ -45,6 +45,7 @@ class EmailSignInViewController: UIViewController {
                 }
             } else {
                 authBanner = Banner(title: "Success!", subtitle: "Signing you in now...", image: nil, backgroundColor: EmailSignUpViewController.init().ui_green, didTapBlock: nil)
+                LoginViewController.init().performHomeScreenFlow()
             }
     
             authBanner.show(nil, duration: 2.0)

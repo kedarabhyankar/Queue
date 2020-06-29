@@ -15,16 +15,16 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var signInWithEmailButton: UIButton? = nil
+    @IBOutlet weak var resetPass: UIButton? = nil
+    @IBOutlet weak var signUpWithEmailButton : UIButton? = nil
+    var siwaButton : ASAuthorizationAppleIDButton? = nil
+    fileprivate var currentNonce: String? = nil
+    
+    func presentationAnchor(for controller: ASAuthorizationController) ->  ASPresentationAnchor {
         return self.view.window!
     }
-    
-    
-    @IBOutlet weak var signInWithEmailButton: UIButton!
-    @IBOutlet weak var resetPass: UIButton!
-    @IBOutlet weak var signUpWithEmailButton: UIButton!
-    var siwaButton : ASAuthorizationAppleIDButton? = nil
-    fileprivate var currentNonce: String?
     
     /**
      This function is used to watch the traitCollectionDidChange environment, which will change the Sign In With Apple Button (SIWA) from dark to light when appropriate.
@@ -44,7 +44,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
             }
         }
         self.view.addSubview((siwaButton)!);
-        constrainSiwaButton();
         siwaButton!.addTarget(self, action: #selector(onSignInWithApple), for: .touchUpInside)
     }
     
@@ -58,12 +57,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
         siwaButton?.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview((siwaButton)!)
         constrainSiwaButton()
-        NSLayoutConstraint.activate([
-            signUpWithEmailButton.topAnchor.constraint(equalTo: siwaButton!.bottomAnchor, constant: 44)
-        ])
-        NSLayoutConstraint.activate([
-            resetPass.topAnchor.constraint(equalTo: signUpWithEmailButton.bottomAnchor, constant:44)
-        ])
         siwaButton!.addTarget(self, action: #selector(onSignInWithApple), for: .touchUpInside)
     }
     
@@ -77,7 +70,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     @IBAction func onSignUpWithEmail(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "emailSignUpScreen") as EmailSignUpViewController
-        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
@@ -100,20 +92,28 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     @IBAction func onResetPassword(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "resetPassword") as ResetPasswordViewController
-        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
     func constrainSiwaButton(){
-        NSLayoutConstraint.activate([
-            siwaButton!.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 44),
-            siwaButton!.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -44),
-            siwaButton!.topAnchor.constraint(equalTo:signInWithEmailButton.bottomAnchor, constant: 22),
-            siwaButton!.widthAnchor.constraint(equalToConstant: signInWithEmailButton.frame.size.width),
-            siwaButton!.heightAnchor.constraint(equalToConstant:
-                                                    signInWithEmailButton.frame.size.height),
-        ])
-        siwaButton?.cornerRadius = 20
+        siwaButton!.constraints.forEach{ (constraint) in
+            if(constraint.firstAttribute == .height){
+                constraint.isActive = false
+            }
+        }
+        if(signUpWithEmailButton != nil){
+            NSLayoutConstraint.activate([siwaButton!.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 44), siwaButton!.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -44),
+                                         siwaButton!.bottomAnchor.constraint(equalTo:signUpWithEmailButton!.topAnchor, constant: -20),
+                                         siwaButton!.heightAnchor.constraint(equalToConstant: 50)])
+            //constrain email button to same dimensions as SIWA button
+            NSLayoutConstraint.activate([
+                signInWithEmailButton!.bottomAnchor.constraint(equalTo: siwaButton!.topAnchor, constant: -20),
+                signInWithEmailButton!.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                signInWithEmailButton!.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 44),
+                signInWithEmailButton!.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -44)
+            ])
+            signInWithEmailButton!.layer.cornerRadius = siwaButton!.cornerRadius
+        }
     }
     
     @available(iOS 13, *)
@@ -199,33 +199,31 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                 ]){ err in
                     if let err = err {
                         print("Error adding document: \(err)")
+                        
                     } else {
                         print("Document added with ID: \(ref!.documentID)")
+                        self.performHomeScreenFlow()
                     }
-                    
-                    // Make a request to set user's display name on Firebase
-                    let changeRequest = authResult?.user.createProfileChangeRequest()
-                    changeRequest?.displayName = appleIDCredential.fullName?.givenName
-                    changeRequest?.commitChanges(completion: { (error) in
-                        
-                        if let error = error {
-                            print(error.localizedDescription)
-                        } else {
-                            print("Updated display name: \(Auth.auth().currentUser!.displayName!)")
-                        }
-                    })
                 }
             }
         }
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
     }
+    
+    
+    func performHomeScreenFlow(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "homeTabBar")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

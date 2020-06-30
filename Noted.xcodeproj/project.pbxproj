@@ -23,9 +23,8 @@
 		E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
-		E4B3B98524A56CBB00D5001D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */; };
 		E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */; };
-		E4D297E024A57A73007E6F45 /* ProfileTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */; };
+		E4E60C9D24AAE599000479E7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */; };
 		E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,9 +74,8 @@
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E45FD3DB24A01EC300826AEF /* Noted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noted.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableView.swift; sourceTree = "<group>"; };
+		E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		FE7E34952923972D08DBC323 /* Pods_Noted_NotedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noted_NotedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -171,10 +169,9 @@
 				E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */,
 				E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */,
 				E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */,
-				E4B3B98424A56CBB00D5001D /* ProfileViewController.swift */,
 				E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */,
-				E4D297DF24A57A73007E6F45 /* ProfileTableView.swift */,
 				E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */,
+				E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */,
 			);
 			path = Noted;
 			sourceTree = "<group>";
@@ -445,9 +442,8 @@
 				E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */,
 				E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */,
 				E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */,
-				E4B3B98524A56CBB00D5001D /* ProfileViewController.swift in Sources */,
 				E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */,
-				E4D297E024A57A73007E6F45 /* ProfileTableView.swift in Sources */,
+				E4E60C9D24AAE599000479E7 /* ProfileTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

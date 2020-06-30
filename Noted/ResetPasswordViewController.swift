@@ -22,6 +22,7 @@ class ResetPasswordViewController: UIViewController {
     
     
     @IBAction func onSubmit(_ sender: Any) {
+        resetPasswordField.resignFirstResponder()
         let email = resetPasswordField.text
         var banner: Banner = Banner();
         Auth.auth().sendPasswordReset(withEmail: email ?? "") { (error) in

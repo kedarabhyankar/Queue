@@ -36,7 +36,11 @@ class EmailSignUpViewController: UIViewController {
     
     
     @IBAction func onCompleteSignUpFlow(_ sender: Any) {
-        
+        firstNameField.resignFirstResponder()
+        lastNameField.resignFirstResponder()
+        emailAddressField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        confirmPasswordField.resignFirstResponder()
         let firstNameFailBanner = Banner(title: "Invalid First Name!", subtitle: "Your first name can only contain letters, and the field must not be left empty!", image: nil, backgroundColor: ui_red, didTapBlock: nil)
         let lastNameFailBanner = Banner(title: "Invalid Last Name!", subtitle: "Your last name can only contain letters, and the field must not be left empty!", image: nil, backgroundColor: ui_red, didTapBlock: nil)
         let emailFailBanner = Banner(title: "Invalid email!", subtitle: "Your email must of valid formatting!", image: nil, backgroundColor: ui_red, didTapBlock: nil)
@@ -131,7 +135,7 @@ class EmailSignUpViewController: UIViewController {
                             print("Document added with ID: \(ref!.documentID)")
                             authBanner = Banner(title: "Success!", subtitle: "Success! Logging you in now...", image: nil, backgroundColor: self.ui_green, didTapBlock: nil)
                             authBanner.show(nil, duration: 1.5)
-                            LoginViewController.init().performHomeScreenFlow()
+                            self.performHomeScreenFlow()
                         }
                         
                     }
@@ -207,6 +211,13 @@ class EmailSignUpViewController: UIViewController {
     
     func authBannerBuilder(bannerTitle: String, text: String) -> Banner {
         return Banner(title: bannerTitle, subtitle: text, image: nil, backgroundColor: ui_red, didTapBlock: nil)
+    }
+    
+    func performHomeScreenFlow(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     /*

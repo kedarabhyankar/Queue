@@ -12,6 +12,7 @@ import CryptoKit
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import BRYXBanner
 
 class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
@@ -202,7 +203,11 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                         
                     } else {
                         print("Document added with ID: \(ref!.documentID)")
-                        self.performHomeScreenFlow()
+                        UserDefaults.standard.set(true, forKey: "loggedIn")
+                        self.showAuthBanner()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                            self.performHomeScreenFlow()
+                        }
                     }
                 }
             }
@@ -212,10 +217,17 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     
     func performHomeScreenFlow(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "homeTabBar")
+        let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    
+    @objc
+    func showAuthBanner(){
+        let authBanner = Banner(title: "Success!", subtitle: "Signing you in now...", image: nil, backgroundColor: EmailSignUpViewController.init().ui_green, didTapBlock: nil)
+        authBanner.show(nil, duration: 2)
+    }
+    
     /*
      // MARK: - Navigation
      

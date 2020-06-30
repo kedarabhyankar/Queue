@@ -24,7 +24,7 @@ class EmailSignInViewController: UIViewController {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
-        
+        emailAddressField.resignFirstResponder()
         let emailAddress = emailAddressField.text ?? ""
         let password = passwordField.text ?? ""
         var authBanner:Banner = Banner();
@@ -43,13 +43,23 @@ class EmailSignInViewController: UIViewController {
                 default:
                     authBanner = Banner(title: "Error!", subtitle: "An unknown error occurred!", image:nil, backgroundColor: EmailSignUpViewController.init().ui_red, didTapBlock: nil)
                 }
+                authBanner.show(nil, duration: 2)
             } else {
                 authBanner = Banner(title: "Success!", subtitle: "Signing you in now...", image: nil, backgroundColor: EmailSignUpViewController.init().ui_green, didTapBlock: nil)
-                LoginViewController.init().performHomeScreenFlow()
+                authBanner.show(nil, duration: 2.0)
+                UserDefaults.standard.set(true, forKey: "loggedIn")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    self.performHomeScreenFlow()
+                }
             }
-    
-            authBanner.show(nil, duration: 2.0)
         }
+    }
+    
+    func performHomeScreenFlow(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "homeTabBar")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     

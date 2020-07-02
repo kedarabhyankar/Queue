@@ -72,7 +72,7 @@
 		E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
 		E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E45FD3DB24A01EC300826AEF /* Noted.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noted.entitlements; sourceTree = "<group>"; };
+		E45FD3DB24A01EC300826AEF /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queue.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				E43460E724A0183700FE3459 /* Queue */,
-				E43460FE24A0183800FE3459 /* NotedTests */,
-				E434610924A0183800FE3459 /* NotedUITests */,
+				E43460FE24A0183800FE3459 /* QueueTests */,
+				E434610924A0183800FE3459 /* QueueUITests */,
 				E43460E624A0183700FE3459 /* Products */,
 				05F4EDEB291695C2F975C9DB /* Pods */,
 				0DE3D8597B20E86F03DDC850 /* Frameworks */,
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */,
-				E45FD3DB24A01EC300826AEF /* Noted.entitlements */,
+				E45FD3DB24A01EC300826AEF /* Queue.entitlements */,
 				E43460E824A0183700FE3459 /* AppDelegate.swift */,
 				E43460EA24A0183700FE3459 /* SceneDelegate.swift */,
 				E43460EC24A0183700FE3459 /* ViewController.swift */,
@@ -176,22 +176,22 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
-		E43460FE24A0183800FE3459 /* NotedTests */ = {
+		E43460FE24A0183800FE3459 /* QueueTests */ = {
 			isa = PBXGroup;
 			children = (
 				E43460FF24A0183800FE3459 /* NotedTests.swift */,
 				E434610124A0183800FE3459 /* Info.plist */,
 			);
-			path = NotedTests;
+			path = QueueTests;
 			sourceTree = "<group>";
 		};
-		E434610924A0183800FE3459 /* NotedUITests */ = {
+		E434610924A0183800FE3459 /* QueueUITests */ = {
 			isa = PBXGroup;
 			children = (
 				E434610A24A0183800FE3459 /* NotedUITests.swift */,
 				E434610C24A0183800FE3459 /* Info.plist */,
 			);
-			path = NotedUITests;
+			path = QueueUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,16 +619,16 @@
 			baseConfigurationReference = BCB51FF290984DE4B21A353D /* Pods-Noted.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Noted/Noted.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Queue/Queue.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
-				INFOPLIST_FILE = Noted/Info.plist;
+				INFOPLIST_FILE = Queue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kedarabhyankar.Noted;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kedarabhyankar.Queue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -640,16 +640,16 @@
 			baseConfigurationReference = A77D3368BBD12F329B21DD7D /* Pods-Noted.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Noted/Noted.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Queue/Queue.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6VJVA9LC5;
-				INFOPLIST_FILE = Noted/Info.plist;
+				INFOPLIST_FILE = Queue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kedarabhyankar.Noted;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kedarabhyankar.Queue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -21,6 +21,7 @@
 		E434610B24A0183800FE3459 /* QueueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434610A24A0183800FE3459 /* QueueUITests.swift */; };
 		E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */; };
 		E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */; };
+		E45692BE24AE680C00511F6B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E45692BD24AE680C00511F6B /* .gitignore */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
 		E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		E434610C24A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
 		E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		E45692BD24AE680C00511F6B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E45FD3DB24A01EC300826AEF /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queue.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */,
 				E45FD3DB24A01EC300826AEF /* Queue.entitlements */,
+				E45692BD24AE680C00511F6B /* .gitignore */,
 				E43460E824A0183700FE3459 /* AppDelegate.swift */,
 				E43460EA24A0183700FE3459 /* SceneDelegate.swift */,
 				E43460EC24A0183700FE3459 /* ViewController.swift */,
@@ -315,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45692BE24AE680C00511F6B /* .gitignore in Resources */,
 				E43460F524A0183800FE3459 /* LaunchScreen.storyboard in Resources */,
 				E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */,
 				E43460F224A0183800FE3459 /* Assets.xcassets in Resources */,

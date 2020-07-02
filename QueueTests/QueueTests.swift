@@ -1,6 +1,6 @@
 //
-//  NotedTests.swift
-//  NotedTests
+//  QueueTests.swift
+//  QueueTests
 //
 //  Created by Kedar Abhyankar on 6/21/20.
 //  Copyright © 2020 Kedar Abhyankar. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Noted
 
-class NotedTests: XCTestCase {
+class QueueTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

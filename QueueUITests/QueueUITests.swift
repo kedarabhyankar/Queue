@@ -1,6 +1,6 @@
 //
-//  NotedUITests.swift
-//  NotedUITests
+//  QueueUITests.swift
+//  QueueUITests
 //
 //  Created by Kedar Abhyankar on 6/21/20.
 //  Copyright © 2020 Kedar Abhyankar. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class NotedUITests: XCTestCase {
+class QueueUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

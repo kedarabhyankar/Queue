@@ -17,8 +17,8 @@
 		E43460F024A0183700FE3459 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43460EE24A0183700FE3459 /* Main.storyboard */; };
 		E43460F224A0183800FE3459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E43460F124A0183800FE3459 /* Assets.xcassets */; };
 		E43460F524A0183800FE3459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43460F324A0183800FE3459 /* LaunchScreen.storyboard */; };
-		E434610024A0183800FE3459 /* NotedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460FF24A0183800FE3459 /* NotedTests.swift */; };
-		E434610B24A0183800FE3459 /* NotedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434610A24A0183800FE3459 /* NotedUITests.swift */; };
+		E434610024A0183800FE3459 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43460FF24A0183800FE3459 /* QueueTests.swift */; };
+		E434610B24A0183800FE3459 /* QueueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434610A24A0183800FE3459 /* QueueUITests.swift */; };
 		E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */; };
 		E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
@@ -64,10 +64,10 @@
 		E43460F424A0183800FE3459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E43460F624A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43460FB24A0183800FE3459 /* QueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E43460FF24A0183800FE3459 /* NotedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedTests.swift; sourceTree = "<group>"; };
+		E43460FF24A0183800FE3459 /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		E434610124A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E434610624A0183800FE3459 /* QueueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E434610A24A0183800FE3459 /* NotedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedUITests.swift; sourceTree = "<group>"; };
+		E434610A24A0183800FE3459 /* QueueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueUITests.swift; sourceTree = "<group>"; };
 		E434610C24A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
 		E43AF2F924A06BF60033ACE8 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		E43460FE24A0183800FE3459 /* QueueTests */ = {
 			isa = PBXGroup;
 			children = (
-				E43460FF24A0183800FE3459 /* NotedTests.swift */,
+				E43460FF24A0183800FE3459 /* QueueTests.swift */,
 				E434610124A0183800FE3459 /* Info.plist */,
 			);
 			path = QueueTests;
@@ -188,7 +188,7 @@
 		E434610924A0183800FE3459 /* QueueUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E434610A24A0183800FE3459 /* NotedUITests.swift */,
+				E434610A24A0183800FE3459 /* QueueUITests.swift */,
 				E434610C24A0183800FE3459 /* Info.plist */,
 			);
 			path = QueueUITests;
@@ -451,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E434610024A0183800FE3459 /* NotedTests.swift in Sources */,
+				E434610024A0183800FE3459 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E434610B24A0183800FE3459 /* NotedUITests.swift in Sources */,
+				E434610B24A0183800FE3459 /* QueueUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

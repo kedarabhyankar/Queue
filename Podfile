@@ -1,22 +1,22 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
 
-target 'Noted' do
+target 'Queue' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Noted
+  # Pods for Queue
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'BRYXBanner'
   pod 'Firebase/Firestore'
 
-  target 'NotedTests' do
+  target 'QueueTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'NotedUITests' do
+  target 'QueueUITests' do
     # Pods for testing
   end
 

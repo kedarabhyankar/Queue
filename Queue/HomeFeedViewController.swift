@@ -1,6 +1,6 @@
 //
 //  HomeFeedViewController.swift
-//  Noted
+//  Queue
 //
 //  Created by Kedar Abhyankar on 6/27/20.
 //  Copyright © 2020 Kedar Abhyankar. All rights reserved.

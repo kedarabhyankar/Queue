@@ -1,6 +1,6 @@
 //
 //  ResetPasswordViewController.swift
-//  Noted
+//  Queue
 //
 //  Created by Kedar Abhyankar on 6/25/20.
 //  Copyright © 2020 Kedar Abhyankar. All rights reserved.

@@ -55,7 +55,7 @@
 		BD35669BE28D82C17E7B09F0 /* Pods_NotedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NotedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13860BE69B25584B755EBB4 /* Pods_Noted.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Noted.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
-		E43460E524A0183700FE3459 /* Noted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noted.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43460E524A0183700FE3459 /* Queue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43460E824A0183700FE3459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E43460EA24A0183700FE3459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E43460EC24A0183700FE3459 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +63,10 @@
 		E43460F124A0183800FE3459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E43460F424A0183800FE3459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E43460F624A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E43460FB24A0183800FE3459 /* NotedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43460FB24A0183800FE3459 /* QueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43460FF24A0183800FE3459 /* NotedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedTests.swift; sourceTree = "<group>"; };
 		E434610124A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E434610624A0183800FE3459 /* NotedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E434610624A0183800FE3459 /* QueueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E434610A24A0183800FE3459 /* NotedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotedUITests.swift; sourceTree = "<group>"; };
 		E434610C24A0183800FE3459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E43AF2F724A0687A0033ACE8 /* EmailSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		E43460DC24A0183700FE3459 = {
 			isa = PBXGroup;
 			children = (
-				E43460E724A0183700FE3459 /* Noted */,
+				E43460E724A0183700FE3459 /* Queue */,
 				E43460FE24A0183800FE3459 /* NotedTests */,
 				E434610924A0183800FE3459 /* NotedUITests */,
 				E43460E624A0183700FE3459 /* Products */,
@@ -146,14 +146,14 @@
 		E43460E624A0183700FE3459 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E43460E524A0183700FE3459 /* Noted.app */,
-				E43460FB24A0183800FE3459 /* NotedTests.xctest */,
-				E434610624A0183800FE3459 /* NotedUITests.xctest */,
+				E43460E524A0183700FE3459 /* Queue.app */,
+				E43460FB24A0183800FE3459 /* QueueTests.xctest */,
+				E434610624A0183800FE3459 /* QueueUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E43460E724A0183700FE3459 /* Noted */ = {
+		E43460E724A0183700FE3459 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
 				E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */,
@@ -173,7 +173,7 @@
 				E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */,
 				E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */,
 			);
-			path = Noted;
+			path = Queue;
 			sourceTree = "<group>";
 		};
 		E43460FE24A0183800FE3459 /* NotedTests */ = {
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E43460E424A0183700FE3459 /* Noted */ = {
+		E43460E424A0183700FE3459 /* Queue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E434610F24A0183800FE3459 /* Build configuration list for PBXNativeTarget "Noted" */;
+			buildConfigurationList = E434610F24A0183800FE3459 /* Build configuration list for PBXNativeTarget "Queue" */;
 			buildPhases = (
 				D6AFFDCD6B2E5B1B6D046056 /* [CP] Check Pods Manifest.lock */,
 				E43460E124A0183700FE3459 /* Sources */,
@@ -211,14 +211,14 @@
 			);
 			dependencies = (
 			);
-			name = Noted;
+			name = Queue;
 			productName = Noted;
-			productReference = E43460E524A0183700FE3459 /* Noted.app */;
+			productReference = E43460E524A0183700FE3459 /* Queue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E43460FA24A0183800FE3459 /* NotedTests */ = {
+		E43460FA24A0183800FE3459 /* QueueTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E434611224A0183800FE3459 /* Build configuration list for PBXNativeTarget "NotedTests" */;
+			buildConfigurationList = E434611224A0183800FE3459 /* Build configuration list for PBXNativeTarget "QueueTests" */;
 			buildPhases = (
 				1B4B9B371CBF23594F78D3C2 /* [CP] Check Pods Manifest.lock */,
 				E43460F724A0183800FE3459 /* Sources */,
@@ -230,14 +230,14 @@
 			dependencies = (
 				E43460FD24A0183800FE3459 /* PBXTargetDependency */,
 			);
-			name = NotedTests;
+			name = QueueTests;
 			productName = NotedTests;
-			productReference = E43460FB24A0183800FE3459 /* NotedTests.xctest */;
+			productReference = E43460FB24A0183800FE3459 /* QueueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E434610524A0183800FE3459 /* NotedUITests */ = {
+		E434610524A0183800FE3459 /* QueueUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E434611524A0183800FE3459 /* Build configuration list for PBXNativeTarget "NotedUITests" */;
+			buildConfigurationList = E434611524A0183800FE3459 /* Build configuration list for PBXNativeTarget "QueueUITests" */;
 			buildPhases = (
 				31C5AF4F39AF99E3DBBA8B1D /* [CP] Check Pods Manifest.lock */,
 				E434610224A0183800FE3459 /* Sources */,
@@ -250,9 +250,9 @@
 			dependencies = (
 				E434610824A0183800FE3459 /* PBXTargetDependency */,
 			);
-			name = NotedUITests;
+			name = QueueUITests;
 			productName = NotedUITests;
-			productReference = E434610624A0183800FE3459 /* NotedUITests.xctest */;
+			productReference = E434610624A0183800FE3459 /* QueueUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +278,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E43460E024A0183700FE3459 /* Build configuration list for PBXProject "Noted" */;
+			buildConfigurationList = E43460E024A0183700FE3459 /* Build configuration list for PBXProject "Queue" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -291,9 +291,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E43460E424A0183700FE3459 /* Noted */,
-				E43460FA24A0183800FE3459 /* NotedTests */,
-				E434610524A0183800FE3459 /* NotedUITests */,
+				E43460E424A0183700FE3459 /* Queue */,
+				E43460FA24A0183800FE3459 /* QueueTests */,
+				E434610524A0183800FE3459 /* QueueUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -468,12 +468,12 @@
 /* Begin PBXTargetDependency section */
 		E43460FD24A0183800FE3459 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E43460E424A0183700FE3459 /* Noted */;
+			target = E43460E424A0183700FE3459 /* Queue */;
 			targetProxy = E43460FC24A0183800FE3459 /* PBXContainerItemProxy */;
 		};
 		E434610824A0183800FE3459 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E43460E424A0183700FE3459 /* Noted */;
+			target = E43460E424A0183700FE3459 /* Queue */;
 			targetProxy = E434610724A0183800FE3459 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -674,7 +674,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noted.app/Noted";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Queue.app/Queue";
 			};
 			name = Debug;
 		};
@@ -696,7 +696,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Noted.app/Noted";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Queue.app/Queue";
 			};
 			name = Release;
 		};
@@ -743,7 +743,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E43460E024A0183700FE3459 /* Build configuration list for PBXProject "Noted" */ = {
+		E43460E024A0183700FE3459 /* Build configuration list for PBXProject "Queue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E434610D24A0183800FE3459 /* Debug */,
@@ -752,7 +752,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E434610F24A0183800FE3459 /* Build configuration list for PBXNativeTarget "Noted" */ = {
+		E434610F24A0183800FE3459 /* Build configuration list for PBXNativeTarget "Queue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E434611024A0183800FE3459 /* Debug */,
@@ -761,7 +761,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E434611224A0183800FE3459 /* Build configuration list for PBXNativeTarget "NotedTests" */ = {
+		E434611224A0183800FE3459 /* Build configuration list for PBXNativeTarget "QueueTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E434611324A0183800FE3459 /* Debug */,
@@ -770,7 +770,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E434611524A0183800FE3459 /* Build configuration list for PBXNativeTarget "NotedUITests" */ = {
+		E434611524A0183800FE3459 /* Build configuration list for PBXNativeTarget "QueueUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E434611624A0183800FE3459 /* Debug */,

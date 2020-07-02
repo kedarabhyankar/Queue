@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kedarabhyankar/Documents/Noted.nosync/Noted.xcodeproj">
+      location = "group:/Users/kedarabhyankar/Documents/Noted.nosync/Queue.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

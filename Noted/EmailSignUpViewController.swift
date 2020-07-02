@@ -19,10 +19,10 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     
-    public final let ui_red: UIColor = UIColor(red: 255.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.000)
-    public final let ui_blue: UIColor = UIColor(red: 0.0/255.0, green: 0/255.0, blue: 255.0/255.0, alpha: 1.000)
-    public final let ui_green: UIColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
-    public final let ui_yellow: UIColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 0/255.0, alpha: 1.000)
+    public final let ui_red: UIColor = UIColor.red
+    public final let ui_blue: UIColor = UIColor.blue
+    public final let ui_green: UIColor = UIColor.green
+    public final let ui_yellow: UIColor = UIColor.yellow
     
     override func viewDidLoad() {
         super.viewDidLoad()

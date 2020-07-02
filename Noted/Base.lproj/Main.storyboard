@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Noted" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="login" customClass="LoginViewController" customModule="Noted" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,10 +468,10 @@
             </objects>
             <point key="canvasLocation" x="3680.8000000000002" y="1597.536945812808"/>
         </scene>
-        <!--View Controller-->
+        <!--accountConfiguration-->
         <scene sceneID="ryS-n0-aRJ">
             <objects>
-                <viewController id="GEX-dI-Zh9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GEX-dI-Zh9" userLabel="accountConfiguration" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPF-jg-cE1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,10 +483,10 @@
             </objects>
             <point key="canvasLocation" x="3681" y="2397"/>
         </scene>
-        <!--View Controller-->
+        <!--notificationConfiguration-->
         <scene sceneID="We8-LB-cak">
             <objects>
-                <viewController id="xzC-Vk-PsT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notificationConfigration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xzC-Vk-PsT" userLabel="notificationConfiguration" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qeA-yF-GKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,10 +498,10 @@
             </objects>
             <point key="canvasLocation" x="4519" y="2396"/>
         </scene>
-        <!--View Controller-->
+        <!--locationConfiguration-->
         <scene sceneID="ulK-g2-0co">
             <objects>
-                <viewController id="W1v-7m-QGb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W1v-7m-QGb" userLabel="locationConfiguration" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVK-2F-P92">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -513,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="3681" y="3175"/>
         </scene>
-        <!--View Controller-->
+        <!--termsOfService-->
         <scene sceneID="Cd6-Sr-NFr">
             <objects>
-                <viewController id="gT2-CG-u67" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="termsOfService" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gT2-CG-u67" userLabel="termsOfService" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASd-OR-hNh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="3681" y="3955"/>
         </scene>
-        <!--View Controller-->
+        <!--privacyPolicy-->
         <scene sceneID="BKp-Bw-vIS">
             <objects>
-                <viewController id="LWF-Fd-7HV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privacyPolicy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LWF-Fd-7HV" userLabel="privacyPolicy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXG-uy-UEl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,10 +543,10 @@
             </objects>
             <point key="canvasLocation" x="4518" y="3955"/>
         </scene>
-        <!--View Controller-->
+        <!--dataUsageConfiguration-->
         <scene sceneID="J5h-Cr-AZs">
             <objects>
-                <viewController id="L99-fF-fgW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dataUsageConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L99-fF-fgW" userLabel="dataUsageConfiguration" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9cs-HK-eyi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

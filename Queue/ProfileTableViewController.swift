@@ -105,6 +105,7 @@ class ProfileTableViewController: UITableViewController {
                 vc.modalPresentationStyle = .fullScreen
                 let banner = Banner(title: "Logged out!", subtitle: "Successfully logged out.", image: nil, backgroundColor: UIColor.green, didTapBlock: nil)
                 banner.show(nil, duration: 2)
+                UserDefaults.standard.set(false, forKey: "loggedIn")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
                     self.present(vc, animated: true, completion: nil)
                 }

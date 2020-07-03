@@ -41,7 +41,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                 default:
                     siwaButton = ASAuthorizationAppleIDButton(type: .default, style: .black)
                     siwaButton?.translatesAutoresizingMaskIntoConstraints = false
-                    
             }
         }
         self.view.addSubview((siwaButton)!);
@@ -192,21 +191,36 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
                 }
                 let db = Firestore.firestore()
                 var ref: DocumentReference? = nil
-                ref = db.collection("users").addDocument(data: [
-                    "signInFlow": "Sign In with Apple",
-                    "firstName": appleIDCredential.fullName?.givenName ?? "first name error!",
-                    "lastName": appleIDCredential.fullName?.familyName ?? "last name error!",
-                    "email":appleIDCredential.email ?? "email error"
-                ]){ err in
+                var userExists = false
+                db.collection("cities").getDocuments() { (querySnapshot, err) in
                     if let err = err {
-                        print("Error adding document: \(err)")
-                        
+                        print("Error getting documents: \(err)")
                     } else {
-                        print("Document added with ID: \(ref!.documentID)")
-                        UserDefaults.standard.set(true, forKey: "loggedIn")
-                        self.showAuthBanner()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                            self.performHomeScreenFlow()
+                        for document in querySnapshot!.documents {
+                            if(document.get("signInFlow") as! String == "Sign In with Apple" && document.get("firstName") as? String == appleIDCredential.fullName?.givenName && document.get("lastName") as? String == appleIDCredential.fullName?.familyName && document.get("email") as? String == appleIDCredential.email){
+                                userExists = true
+                                break;
+                            }
+                        }
+                    }
+                }
+                if(!userExists && (appleIDCredential.fullName?.givenName != "first name error!" ||
+                                    appleIDCredential.fullName?.familyName != "last name error!")){
+                    ref = db.collection("users").addDocument(data: [
+                        "signInFlow": "Sign In with Apple",
+                        "firstName": appleIDCredential.fullName?.givenName ?? "first name error!",
+                        "lastName": appleIDCredential.fullName?.familyName ?? "last name error!",
+                        "email":appleIDCredential.email ?? "email error"
+                    ]){ err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("Document added with ID: \(ref!.documentID)")
+                            UserDefaults.standard.set(true, forKey: "loggedIn")
+                            self.showAuthBanner()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                                self.performHomeScreenFlow()
+                            }
                         }
                     }
                 }

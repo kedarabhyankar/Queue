@@ -56,12 +56,20 @@
                                     <action selector="onResetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLz-p1-Oap"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theater" translatesAutoresizingMaskIntoConstraints="NO" id="5A6-xp-5nL">
+                                <rect key="frame" x="103" y="126" width="169" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5A6-xp-5nL" secondAttribute="height" multiplier="1:1" id="jYx-6Q-sXG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9iN-EM-cRb" firstAttribute="centerX" secondItem="OYc-Vc-qLP" secondAttribute="centerX" placeholder="YES" id="1P8-NG-h0j"/>
                             <constraint firstItem="Sdz-Vb-goG" firstAttribute="top" secondItem="OYc-Vc-qLP" secondAttribute="bottom" constant="8" symbolic="YES" id="DNK-np-Nms"/>
+                            <constraint firstItem="5A6-xp-5nL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="F74-bX-UUc"/>
+                            <constraint firstItem="5A6-xp-5nL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="FAY-rf-eNS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sdz-Vb-goG" secondAttribute="bottom" constant="50" id="HmK-X5-wsk"/>
                             <constraint firstItem="9iN-EM-cRb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="KY8-Jp-ADN"/>
                             <constraint firstItem="OYc-Vc-qLP" firstAttribute="top" secondItem="9iN-EM-cRb" secondAttribute="bottom" constant="93" id="LKf-gU-KfN"/>
@@ -70,11 +78,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9iN-EM-cRb" secondAttribute="trailing" constant="100" id="WlT-SZ-Y5I"/>
                             <constraint firstItem="Sdz-Vb-goG" firstAttribute="top" secondItem="OYc-Vc-qLP" secondAttribute="bottom" constant="8" symbolic="YES" id="a2I-0X-Fgh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RWW-PO-6Uq" secondAttribute="trailing" constant="100" id="bbW-TR-7EU"/>
+                            <constraint firstItem="RWW-PO-6Uq" firstAttribute="top" secondItem="5A6-xp-5nL" secondAttribute="bottom" constant="27" id="q36-l1-5cf"/>
                             <constraint firstItem="OYc-Vc-qLP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rCl-kX-bQb"/>
-                            <constraint firstItem="RWW-PO-6Uq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="234" id="tSk-qf-vRx"/>
                             <constraint firstItem="RWW-PO-6Uq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v9s-3d-rOY"/>
                             <constraint firstItem="Sdz-Vb-goG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vEW-nP-C8i"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OYc-Vc-qLP" secondAttribute="bottom" constant="95" id="vyu-cf-m2S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5A6-xp-5nL" secondAttribute="trailing" constant="103" id="y0R-ak-R0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="M75-BA-cau"/>
@@ -399,10 +408,10 @@
             </objects>
             <point key="canvasLocation" x="884" y="1598"/>
         </scene>
-        <!--Profile Table View Controller-->
+        <!--settings-->
         <scene sceneID="pQm-0b-TVJ">
             <objects>
-                <tableViewController id="Gw2-Ge-wQL" customClass="ProfileTableViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gw2-Ge-wQL" userLabel="settings" customClass="ProfileTableViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c77-in-RS7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,14 +461,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZBU-nF-uJX"/>
-                    <connections>
-                        <segue destination="GEX-dI-Zh9" kind="show" identifier="settingsToAccount" id="fky-xm-AcU"/>
-                        <segue destination="xzC-Vk-PsT" kind="show" identifier="settingsToNotification" id="00J-Yh-YSz"/>
-                        <segue destination="W1v-7m-QGb" kind="show" identifier="settingsToLocation" id="aQm-9s-bNA"/>
-                        <segue destination="L99-fF-fgW" kind="show" identifier="settingsToData" id="Ttb-AF-HbT"/>
-                        <segue destination="gT2-CG-u67" kind="show" identifier="settingsToTOS" id="TeC-dc-AdH"/>
-                        <segue destination="LWF-Fd-7HV" kind="show" identifier="settingsToPrivacy" id="bkD-3h-BdB"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgm-eU-RYU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -468,7 +469,7 @@
         <!--accountConfiguration-->
         <scene sceneID="ryS-n0-aRJ">
             <objects>
-                <viewController storyboardIdentifier="accountConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GEX-dI-Zh9" userLabel="accountConfiguration" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GEX-dI-Zh9" userLabel="accountConfiguration" customClass="AccountConfigViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPF-jg-cE1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -479,12 +480,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EZ-N7-c3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681" y="2397"/>
+            <point key="canvasLocation" x="3681" y="2396"/>
         </scene>
         <!--notificationConfiguration-->
         <scene sceneID="We8-LB-cak">
             <objects>
-                <viewController storyboardIdentifier="notificationConfigration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xzC-Vk-PsT" userLabel="notificationConfiguration" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notificationConfigration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xzC-Vk-PsT" userLabel="notificationConfiguration" customClass="NotificationConfigViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qeA-yF-GKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ8-GC-p17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4519" y="2396"/>
+            <point key="canvasLocation" x="4623" y="2396"/>
         </scene>
         <!--locationConfiguration-->
         <scene sceneID="ulK-g2-0co">
@@ -516,7 +517,7 @@
         <!--termsOfService-->
         <scene sceneID="Cd6-Sr-NFr">
             <objects>
-                <viewController storyboardIdentifier="termsOfService" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gT2-CG-u67" userLabel="termsOfService" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="termsOfService" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gT2-CG-u67" userLabel="termsOfService" customClass="TermsOfServiceViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASd-OR-hNh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,7 +533,7 @@
         <!--privacyPolicy-->
         <scene sceneID="BKp-Bw-vIS">
             <objects>
-                <viewController storyboardIdentifier="privacyPolicy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LWF-Fd-7HV" userLabel="privacyPolicy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privacyPolicy" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LWF-Fd-7HV" userLabel="privacyPolicy" customClass="PrivacyPolicyViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXG-uy-UEl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -548,7 +549,7 @@
         <!--dataUsageConfiguration-->
         <scene sceneID="J5h-Cr-AZs">
             <objects>
-                <viewController storyboardIdentifier="dataUsageConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L99-fF-fgW" userLabel="dataUsageConfiguration" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dataUsageConfiguration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L99-fF-fgW" userLabel="dataUsageConfiguration" customClass="DataUsageConfigViewController" customModule="Queue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9cs-HK-eyi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -614,11 +615,11 @@
             </objects>
             <point key="canvasLocation" x="1754" y="857"/>
         </scene>
-        <!--Profile-->
+        <!--Settings-->
         <scene sceneID="ftE-me-xg0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dAg-1f-wih" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="T2Y-Rs-9Td"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="T2Y-Rs-9Td"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nt7-Rf-QcX">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -653,9 +654,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="theater" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

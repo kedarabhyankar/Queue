@@ -24,6 +24,12 @@
 		E45692BE24AE680C00511F6B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E45692BD24AE680C00511F6B /* .gitignore */; };
 		E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45FD3D924A01D7D00826AEF /* LoginViewController.swift */; };
 		E45FD3DF24A0573700826AEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */; };
+		E4AE048124AEFC5000A259C3 /* AccountConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048024AEFC5000A259C3 /* AccountConfigViewController.swift */; };
+		E4AE048324AEFC7A00A259C3 /* NotificationConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048224AEFC7A00A259C3 /* NotificationConfigViewController.swift */; };
+		E4AE048524AEFC9000A259C3 /* LocationConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048424AEFC9000A259C3 /* LocationConfigViewController.swift */; };
+		E4AE048724AEFCAA00A259C3 /* DataUsageConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048624AEFCAA00A259C3 /* DataUsageConfigViewController.swift */; };
+		E4AE048924AEFCC600A259C3 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048824AEFCC600A259C3 /* TermsOfServiceViewController.swift */; };
+		E4AE048B24AEFCE100A259C3 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AE048A24AEFCE100A259C3 /* PrivacyPolicyViewController.swift */; };
 		E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */; };
 		E4E60C9D24AAE599000479E7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */; };
 		E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */; };
@@ -83,6 +89,12 @@
 		E45FD3D924A01D7D00826AEF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E45FD3DB24A01EC300826AEF /* Queue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queue.entitlements; sourceTree = "<group>"; };
 		E45FD3DE24A0573700826AEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4AE048024AEFC5000A259C3 /* AccountConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfigViewController.swift; sourceTree = "<group>"; };
+		E4AE048224AEFC7A00A259C3 /* NotificationConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConfigViewController.swift; sourceTree = "<group>"; };
+		E4AE048424AEFC9000A259C3 /* LocationConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfigViewController.swift; sourceTree = "<group>"; };
+		E4AE048624AEFCAA00A259C3 /* DataUsageConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsageConfigViewController.swift; sourceTree = "<group>"; };
+		E4AE048824AEFCC600A259C3 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		E4AE048A24AEFCE100A259C3 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		E4EB461824A55FC2003DE21C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +199,12 @@
 				E4B3B98624A56CF100D5001D /* ProfileTableViewCell.swift */,
 				E41B4C1524A7E32500A384C1 /* HomeFeedViewController.swift */,
 				E4E60C9C24AAE599000479E7 /* ProfileTableViewController.swift */,
+				E4AE048024AEFC5000A259C3 /* AccountConfigViewController.swift */,
+				E4AE048224AEFC7A00A259C3 /* NotificationConfigViewController.swift */,
+				E4AE048424AEFC9000A259C3 /* LocationConfigViewController.swift */,
+				E4AE048624AEFCAA00A259C3 /* DataUsageConfigViewController.swift */,
+				E4AE048824AEFCC600A259C3 /* TermsOfServiceViewController.swift */,
+				E4AE048A24AEFCE100A259C3 /* PrivacyPolicyViewController.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -451,11 +469,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45FD3DA24A01D7D00826AEF /* LoginViewController.swift in Sources */,
+				E4AE048324AEFC7A00A259C3 /* NotificationConfigViewController.swift in Sources */,
 				E43AF2FA24A06BF60033ACE8 /* EmailSignUpViewController.swift in Sources */,
+				E4AE048124AEFC5000A259C3 /* AccountConfigViewController.swift in Sources */,
+				E4AE048924AEFCC600A259C3 /* TermsOfServiceViewController.swift in Sources */,
 				E43460ED24A0183700FE3459 /* ViewController.swift in Sources */,
 				E4B3B98724A56CF100D5001D /* ProfileTableViewCell.swift in Sources */,
 				E41B4C1624A7E32500A384C1 /* HomeFeedViewController.swift in Sources */,
+				E4AE048524AEFC9000A259C3 /* LocationConfigViewController.swift in Sources */,
+				E4AE048724AEFCAA00A259C3 /* DataUsageConfigViewController.swift in Sources */,
 				E43AF2F824A0687A0033ACE8 /* EmailSignInViewController.swift in Sources */,
+				E4AE048B24AEFCE100A259C3 /* PrivacyPolicyViewController.swift in Sources */,
 				E43460E924A0183700FE3459 /* AppDelegate.swift in Sources */,
 				E43460EB24A0183700FE3459 /* SceneDelegate.swift in Sources */,
 				E4EB461924A55FC2003DE21C /* ResetPasswordViewController.swift in Sources */,

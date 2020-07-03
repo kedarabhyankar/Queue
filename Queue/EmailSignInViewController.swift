@@ -10,7 +10,7 @@ import UIKit
 import BRYXBanner
 import FirebaseAuth
 
-class EmailSignInViewController: UIViewController {
+class EmailSignInViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -18,9 +18,31 @@ class EmailSignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        leftSwipe.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(leftSwipe)
+        
         passwordField.isSecureTextEntry = true
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+    }
+    
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer){
+        switch swipe.direction.rawValue {
+            case 1:
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "login")
+                let transitionAnimation = CATransition()
+                transitionAnimation.duration = 0.5
+                transitionAnimation.type = CATransitionType.push
+                transitionAnimation.subtype = CATransitionSubtype.fromLeft
+                transitionAnimation.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+                vc.modalPresentationStyle = .fullScreen
+                view.window!.layer.add(transitionAnimation, forKey: kCATransition)
+                present(vc, animated: true)
+            default:
+                break
+        }
     }
     
     @IBAction func onSignIn(_ sender: Any) {

@@ -30,16 +30,8 @@ class EmailSignInViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func swipeAction(swipe: UISwipeGestureRecognizer){
         switch swipe.direction.rawValue {
             case 1:
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(identifier: "login")
-                let transitionAnimation = CATransition()
-                transitionAnimation.duration = 0.5
-                transitionAnimation.type = CATransitionType.push
-                transitionAnimation.subtype = CATransitionSubtype.fromLeft
-                transitionAnimation.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-                vc.modalPresentationStyle = .fullScreen
-                view.window!.layer.add(transitionAnimation, forKey: kCATransition)
-                present(vc, animated: true)
+                view.window!.layer.add(swipebackTransitionBuilder(), forKey: kCATransition)
+                present(modalPresenter(storyboard: "Main", vc: "login"), animated: true)
             default:
                 break
         }
@@ -84,6 +76,22 @@ class EmailSignInViewController: UIViewController, UIGestureRecognizerDelegate {
         present(vc, animated: true, completion: nil)
     }
     
+    
+    func swipebackTransitionBuilder() -> CATransition {
+        let transitionAnimation = CATransition()
+        transitionAnimation.duration = 0.5
+        transitionAnimation.type = CATransitionType.push
+        transitionAnimation.subtype = CATransitionSubtype.fromLeft
+        transitionAnimation.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        return transitionAnimation
+    }
+    
+    func modalPresenter(storyboard: String, vc: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: vc)
+        vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
     
 
     /*

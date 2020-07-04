@@ -80,29 +80,34 @@ class ProfileTableViewController: UITableViewController {
         
         if(indexPath.row == 0){
             //acount configuration
+            transitionView(storyboard: "Main", vc: "accountConfiguration")
+            
         } else if(indexPath.row == 1){
             //notifications
+            transitionView(storyboard: "Main", vc: "notificationConfiguration")
             
         } else if(indexPath.row == 2){
             //location
+            transitionView(storyboard: "Main", vc: "locationConfiguration")
             
         } else if(indexPath.row == 3){
             //data usage
+            transitionView(storyboard: "Main", vc: "dataUsageConfiguration")
             
         } else if(indexPath.row == 4){
             //tos
+            transitionView(storyboard: "Main", vc: "termsOfService")
             
         } else if(indexPath.row == 5){
             //privacy policy
+            transitionView(storyboard: "Main", vc: "privacyPolicy")
             
         } else if(indexPath.row == 6){
             //log out
-            
             do{
                 try Auth.auth().signOut()
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(identifier: "login")
-                vc.modalPresentationStyle = .fullScreen
                 let banner = Banner(title: "Logged out!", subtitle: "Successfully logged out.", image: nil, backgroundColor: UIColor.green, didTapBlock: nil)
                 banner.show(nil, duration: 2)
                 UserDefaults.standard.set(false, forKey: "loggedIn")
@@ -112,17 +117,14 @@ class ProfileTableViewController: UITableViewController {
             } catch let error {
                 print(error)
             }
-            
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    func transitionView(storyboard: String, vc: String){
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let view = storyboard.instantiateViewController(identifier: vc)
+        view.modalPresentationStyle = .fullScreen
+        present(view, animated: true)
+    }
     
 }
